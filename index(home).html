@@ -1,0 +1,2491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 0vh;
+        }
+
+        header {
+            width: 100%;
+            height: 95vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-nav-con {
+            width: 100%;
+            height: 7%;
+            border-bottom: 1px solid #cdcdcdd2;
+        }
+
+        .menu-nav {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo-div,
+        .nav-div,
+        .lang-div {
+            width: 20%;
+            height: 100%;
+        }
+
+        .logo-div {
+            background-image: url(IMAGES/zonealarm-logo.svg);
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+
+        .nav-div {
+            width: 50%;
+        }
+
+        .nav-item {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .nav-item .f1,
+        .f2,
+        .f3,
+        .f4,
+        .f5 {
+            transition: all .1s ease-in-out;
+            height: 100%;
+            width: 19%;
+            place-content: center;
+            text-align: center;
+        }
+
+        /* li:hover .hho{
+            width: 100%;
+        } */
+        li:hover .hh01 {
+            text-shadow: .2px .2px .5px #ee0c5fb8;
+        }
+
+        /* li:hover .hho1{
+            width: 100%;
+        } */
+        .f1 {
+            z-index: 33;
+        }
+
+        .f2 {
+            margin-right: 10px;
+        }
+
+        .fa-angle-down {
+            font-size: 21px;
+            font-weight: normal;
+            padding-left: 5px;
+        }
+
+        .lang-div {
+            padding-top: 20px;
+            z-index: 99;
+        }
+
+        .button-div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-con:hover {
+            color: #f82020;
+        }
+
+        .button-con {
+            height: 30%;
+            border-left: 1px solid #c0c0c0a7;
+            padding: 5px;
+            font-size: 14px;
+            padding-left: 10px;
+            transition: all .4s ease;
+        }
+
+        #toggle-me:checked~.hidden-div {
+            opacity: 1;
+            display: block;
+        }
+
+        .button-con:focus {
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .fa-user-o {
+            margin-right: 15px;
+            transition: 0.5s;
+            position: relative;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .fa-user-o:hover {
+            color: #f82020;
+            cursor: pointer;
+        }
+
+        .fa-angle-down {
+            font-size: 21px;
+            font-weight: normal;
+            transition: all .2s ease;
+        }
+
+        .hidden-div {
+            opacity: 0;
+            width: 90%;
+            margin: auto;
+            margin-left: 0;
+            height: 250px;
+            margin-top: 30px;
+            background-color: #ee0c5f70;
+            border-radius: 5px;
+            box-shadow: 1px 1px 24px 1px #98989872;
+            display: none;
+        }
+
+        .div1,
+        .div2,
+        .div3 {
+            width: 100%;
+            height: 33%;
+        }
+
+        .div1,
+        .div2 {
+            place-content: end;
+        }
+
+        .div3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .language-label {
+            margin-left: 9px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .language-input,
+        .lantt {
+            width: 90%;
+            height: 55%;
+            border-radius: 5px;
+            outline: none;
+            border: #ff0000e8;
+            margin-left: 9px;
+            margin-top: 2px;
+            padding-left: 3px;
+            background-color: #f0efefd1;
+        }
+
+        .save-button {
+            width: 90%;
+            height: 55%;
+            color: white;
+            background-color: #f2226ed2;
+            font-size: 18px;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            border-radius: 2px;
+            transition: all .4s ease;
+        }
+
+        .save-button:hover {
+            background-color: white;
+            height: 50%;
+            width: 80%;
+            font-size: 15px;
+            color: #ff226ed2;
+        }
+
+        .hh01 {
+            text-decoration: none;
+            color: black;
+            transition: all .6s ease;
+        }
+
+        .bg-1 {
+            background-image: linear-gradient(rgba(243, 243, 243, 0.209), rgba(243, 243, 243, 0.477), rgba(243, 243, 243, 0.671), rgba(251, 224, 240, 0.506), rgba(255, 183, 226, 0.637)), url(IMAGES/5523732.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 56vh;
+        }
+
+        .renal {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .renal-text {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .renal-image {
+            width: 35%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image11 {
+            width: 350px;
+            height: 370px;
+        }
+
+        .fst {
+            width: 150px;
+            font-size: 20px;
+            color: white;
+            font-weight: normal;
+            border-radius: 4px;
+            text-align: center;
+            place-content: center;
+            padding: 5px;
+            margin-bottom: 10px;
+            background-color: #ee0c5d;
+        }
+
+        .fsw {
+            font-size: 20px;
+            font-weight: bold;
+            color: #343333;
+            border-radius: 4px;
+            place-content: center;
+            padding: 5px;
+        }
+
+        .gir {
+            color: #ee0c5d;
+        }
+
+        .ccu {
+            font-size: 40px;
+            color: #343333;
+            margin-bottom: 20px;
+
+        }
+
+        .hhy {
+            color: #ee0c5d;
+        }
+
+        .ngt {
+            color: #00af43;
+        }
+
+        .guy {
+            color: black;
+            font-size: 16px;
+            padding-bottom: 30px;
+        }
+
+        .ven {
+            width: 30%;
+            height: 50px;
+            font-size: 20px;
+            background-color: #00af43;
+            color: white;
+            border-radius: 3px;
+            box-shadow: .5px .5px 5px 0px #ee0c5fc4;
+            border: none;
+            transition: all .4s ease;
+            margin-bottom: 20px;
+        }
+
+        .ven:hover {
+            width: 27%;
+            height: 40px;
+            background-color: white;
+            color: #00af43;
+            margin: 10px;
+            margin-bottom: 20px;
+            box-shadow: .5px .5px 2.5px 0px #ee0c5fc4;
+        }
+
+        .kils {
+            color: #343333;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .ttoo1 {
+            width: 100%;
+            height: 100%;
+            font-size: 17px;
+            display: block;
+        }
+
+        .hid-me {
+            justify-content: end;
+            align-items: start;
+            width: 1070px;
+            margin-left: -270px;
+            height: 350px;
+            background-color: white;
+            cursor: pointer;
+            opacity: 0;
+            display: none;
+            border: 1px solid #7d7d7d5d;
+        }
+
+        .h-d-1 {
+            margin-top: 40px;
+            width: 33%;
+            height: 52%;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-around;
+        }
+
+        .h-d-2 {
+            width: 33%;
+            height: 100%;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .f1,
+        .f2,
+        .f3,
+        .f4,
+        .f5 {
+            place-content: start;
+        }
+
+        .hho-con {
+            width: 100%;
+            height: 10%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .hho-con1 {
+            width: 100%;
+            height: 10%;
+            margin-bottom: 11px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .f1:hover .hho1,
+        .f2:hover .hho,
+        .f3:hover .hho,
+        .f4:hover .hho,
+        .f5:hover .hho {
+            width: 100%;
+        }
+
+        .hho {
+            width: 0%;
+            height: 100%;
+            background-color: #ee0c5d;
+            transition: all .3s ease-in-out;
+        }
+
+        .hho1 {
+            width: 0%;
+            height: 100%;
+            background-color: #ee0c5d;
+            transition: all .3s ease-in-out;
+        }
+
+        .h-d-3 {
+            width: 33%;
+            height: 100%;
+            text-align: start;
+            display: flex;
+            justify-content: end;
+            background-color: #f8f8f8;
+            border-left: 1px solid #7d7d7d5d;
+        }
+
+        .d-1-1 {
+            width: 87%;
+            font-size: 15px;
+            color: #343333;
+        }
+
+        .d-1-1-1 {
+            width: 87%;
+            font-size: 15px;
+            color: #343333;
+            margin-top: 45px;
+        }
+
+        .a-1-1 {
+            width: 87%;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #434343;
+            font-weight: normal;
+            transition: all .2s ease;
+        }
+
+        .a-1-1:hover {
+            color: #ee0c5d;
+        }
+
+        .b-1-1 {
+            width: 87%;
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #434343;
+            font-weight: normal;
+            transition: all .2s ease;
+        }
+
+        .b-1-1:hover {
+            color: #ee0c5d;
+        }
+
+        .w-w {
+            width: 87%;
+            height: 100%;
+            list-style: none;
+        }
+
+        .j-w {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #434343;
+            transition: all .1s ease;
+        }
+
+        .fa-building,
+        .fa-envelope,
+        .fa-newspaper-o,
+        .fa-user-circle,
+        .fa-comment,
+        .fa-address-book {
+            margin-right: 10px;
+            transition: all .1s ease;
+        }
+
+        .j-w:hover {
+            color: #ee0c5d;
+        }
+
+        #ttoogg:checked~.hid-me {
+            opacity: 1;
+            cursor: pointer;
+            display: flex;
+        }
+
+        .ttoo {
+            height: 100%;
+        }
+
+        .main {
+            width: 100%;
+            height: 33vh;
+        }
+
+        .sub-main {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .sub-1,
+        .sub-2,
+        .sub-3 {
+            height: 75%;
+            width: 30%;
+            text-align: center;
+            box-shadow: 2px 2px 10px#595959a6;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .sub-1:hover .sub-b11,
+        .sub-2:hover .sub-b11,
+        .sub-3:hover .sub-b11 {
+            color: white;
+            background-color: #00af43;
+        }
+
+        .sub-img {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .sub-bt {
+            width: 100%;
+            height: 10%;
+            font-size: 20px;
+            font-weight: bold;
+            color: #434343;
+        }
+
+        .sub-st {
+            width: 100%;
+            height: 10%;
+            font-size: 14px;
+            font-weight: normal;
+            color: #434343;
+            place-content: end;
+        }
+
+        .sub-b {
+            width: 100%;
+            height: 40%;
+            place-content: center;
+        }
+
+        .sub-img11 {
+            width: 26%;
+            height: 65%;
+        }
+
+        .sub-img12 {
+            width: 18%;
+            height: 80%;
+        }
+
+        .sub-img13 {
+            width: 20%;
+            height: 65%;
+        }
+
+        .sub-b11 {
+            width: 30%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #545454;
+            background-color: transparent;
+            text-transform: uppercase;
+            cursor: pointer;
+            height: 45%;
+            border: 1px solid #676767aa;
+            transition: all .5s ease;
+        }
+
+        main {
+            width: 100%;
+            margin-top: 10px;
+            height: 500vh;
+        }
+
+        .first-div-in-main {
+            width: 100%;
+            height: 65vh;
+            background-color: #3a3a3a;
+        }
+
+        .in-main {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+        }
+
+        .in-main-text {
+            width: 50%;
+            height: 100%;
+            place-content: center;
+        }
+
+        .in-main-img {
+            width: 50%;
+            height: 100%;
+            background-image: url(IMAGES/homepage-za-anti-ransomware-laptop-desktop.png);
+            background-position-y: 110px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .main-text {
+            width: 90%;
+            height: 70%;
+        }
+
+        .t-4 {
+            height: 10%;
+            font-size: 22px;
+            color: #b3b3b3f8;
+            place-content: center;
+        }
+
+        .t-2 {
+            height: 30%;
+            font-size: 38px;
+            color: white;
+            place-content: center;
+        }
+
+        .p-p {
+            height: 15%;
+            place-content: end;
+            font-size: 18px;
+            font-weight: normal;
+            color: white;
+        }
+
+        .t-t {
+            height: 20%;
+            width: 45%;
+            display: flex;
+        }
+
+        .t-b {
+            height: 25%;
+            place-content: center;
+        }
+
+        .t-bb {
+            width: 40%;
+            height: 60%;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: #00af43;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            transition: all .3s ease;
+        }
+
+        .t-bb:hover {
+            color: #00af43;
+            background-color: white;
+            box-shadow: 1px 1px 5px 1px #00000073;
+            width: 38%;
+            height: 56%;
+            font-size: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .i-h {
+            width: 35%;
+            background-image: url(IMAGES/W73.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .t-h {
+            width: 65%;
+            place-content: center;
+        }
+
+        .t-h-5 {
+            font-size: 17px;
+            color: white;
+        }
+
+        .t-h-p {
+            font-size: 13px;
+            color: white;
+            font-weight: normal;
+        }
+
+        .second-div-in-main {
+            width: 100%;
+            height: 75vh;
+        }
+
+        .sec-main-div {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sec-image {
+            width: 40%;
+            height: 100%;
+            background-image: url(IMAGES/homepage-za-mobile-security.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 430px;
+        }
+
+        .sec-text {
+            width: 50%;
+            height: 60%;
+        }
+
+        .s-t-3 {
+            width: 100%;
+            height: 15%;
+            font-size: 20px;
+            color: #545454;
+            place-content: center;
+        }
+
+        .s-t-2 {
+            width: 100%;
+            height: 25%;
+            font-size: 40px;
+            color: #3a3a3a;
+        }
+
+        .s-t-p {
+            width: 100%;
+            height: 30%;
+            font-size: 21px;
+            font-weight: lighter;
+            color: #3a3a3a;
+            place-content: center;
+        }
+
+        .s-t-b {
+            width: 100%;
+            height: 30%;
+            place-content: center;
+        }
+
+        .s-t-bb {
+            width: 38%;
+            height: 53%;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: #00af43;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            transition: all .3s ease;
+        }
+
+        .s-t-bb:hover {
+            color: #00af43;
+            background-color: white;
+            box-shadow: 1px 1px 5px 1px #00000073;
+            width: 36%;
+            height: 50%;
+            font-size: 16px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .third-div-in-main {
+            width: 100%;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .third-main-div {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+        }
+
+        .third-text {
+            width: 100%;
+            height: 33%;
+        }
+
+        .third-image {
+            width: 100%;
+            height: 60%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .th-h-2 {
+            width: 100%;
+            height: 60%;
+            font-size: 40px;
+            color: #343333;
+            font-weight: 700;
+            place-content: end;
+            text-align: center;
+        }
+
+        .th-h-4 {
+            width: 100%;
+            height: 20%;
+            font-size: 22px;
+            font-weight: lighter;
+            color: #434343;
+            text-align: center;
+            place-content: center;
+        }
+
+        .t-i-1 {
+            width: 80%;
+            height: 97%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .t-i-2 {
+            width: 48.5%;
+            height: 100%;
+            background-color: white;
+            border-radius: 3px;
+            border: 1px solid #c5c5c5cc;
+        }
+
+        .b-b-but {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .b-b-bb {
+            width: 55%;
+            height: 35%;
+            font-size: 16px;
+            font-weight: bold;
+            place-content: center;
+            background-color: #00af43;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            transition: all .3s ease;
+            cursor: pointer;
+        }
+
+        .b-b-bb:hover {
+            color: #ee0c5d;
+            background-color: white;
+            width: 53%;
+            height: 31%;
+            font-size: 15px;
+            margin-top: 3px;
+            margin-bottom: 4px;
+            border: 1px solid #ee0c5d;
+        }
+
+        .h-h-aa {
+            margin-top: 20px;
+            color: #545454;
+        }
+
+        .h-h-pp {
+            width: 100%;
+            height: 20%;
+            text-align: center;
+            place-content: center;
+            font-size: 17px;
+            font-weight: normal;
+        }
+
+        .h-h-22 {
+            width: 100%;
+            height: 10%;
+            font-size: 32px;
+            font-weight: 500;
+            text-align: center;
+            place-content: start;
+            color: #343333;
+        }
+
+        .h-h-44 {
+            width: 100%;
+            height: 10%;
+            font-size: 18px;
+            place-content: end;
+            text-align: center;
+            color: #3a3a3a;
+        }
+
+        .i-i-img {
+            width: 100%;
+            height: 30%;
+            background-image: url(IMAGES/free_fw_150.png);
+            background-position: bottom;
+            background-size: 110px;
+            background-repeat: no-repeat;
+        }
+
+        .i-i-img2 {
+            width: 100%;
+            height: 30%;
+            background-image: url(IMAGES/free_av_150.png);
+            background-position: bottom;
+            background-size: 110px;
+            background-repeat: no-repeat;
+        }
+
+        .forth-div-in-main {
+            width: 100%;
+        }
+
+        .f-main {
+            width: 60%;
+            margin: auto;
+            height: 40%;
+            place-content: center;
+            margin-bottom: 30px;
+        }
+
+        .j-h-2 {
+            text-align: center;
+            font-size: 40px;
+            color: #2b2b2b;
+            margin-top: 50px;
+        }
+
+        .j-h-p {
+            text-align: center;
+            font-size: 22px;
+            font-weight: lighter;
+            color: #545454;
+            margin-top: 30px;
+        }
+
+        .f-i-main {
+            width: 100%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+
+        .i-i-f1 {
+            width: 100%;
+        }
+
+        .i-i-f2 {
+            width: 100%;
+        }
+
+        .i-i-f3 {
+            width: 100%;
+        }
+
+        .i-i-f4 {
+            width: 100%;
+        }
+
+        .i-i-f5 {
+            width: 100%;
+        }
+
+        .i-i-f6 {
+            width: 100%;
+        }
+
+        .d-21 {
+            width: 100%;
+            z-index: 33;
+            height: 0vh;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            border-top: 1px solid #dcdcdc;
+            background-color: #f2f2f2;
+            transition: all .3s ease;
+        }
+
+        .d-22 {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            width: 100%;
+            z-index: 33;
+            height: 0vh;
+            border-top: 1px solid #dcdcdc;
+            background-color: #f2f2f2;
+            transition: all .3s ease;
+        }
+
+        .d-23 {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            width: 100%;
+            z-index: 33;
+            height: 0vh;
+            border-top: 1px solid #dcdcdc;
+            background-color: #f2f2f2;
+            transition: all .3s ease;
+        }
+
+        .d-24 {
+            width: 100%;
+            z-index: 33;
+            height: 0vh;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            border-top: 1px solid #dcdcdc;
+            background-color: #f2f2f2;
+            transition: all .3s ease;
+        }
+
+        .d-25 {
+            width: 100%;
+            z-index: 33;
+            height: 0vh;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            border-top: 1px solid #dcdcdc;
+            background-color: #f2f2f2;
+            transition: all .3s ease;
+        }
+
+        .d-26 {
+            width: 100%;
+            z-index: 33;
+            height: 0vh;
+            border-top: 1px solid #dcdcdc;
+            background-color: #f2f2f2;
+            transition: all .3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+        #wedd1:checked~.d-21,
+        #wedd2:checked~.d-22,
+        #wedd3:checked~.d-23,
+        #wedd4:checked~.d-24,
+        #wedd5:checked~.d-25,
+        #wedd6:checked~.d-26 {
+            height: 63vh;
+            border-top: 1px solid #dcdcdc;
+            border-bottom: 1px solid #dcdcdc;
+
+        }
+
+        .d-21 .d-21-1,
+        .d-22 .d-21-1,
+        .d-23 .d-21-1,
+        .d-24 .d-21-1,
+        .d-25 .d-21-1,
+        .d-26 .d-21-1 {
+            display: none;
+            transition: all .4s ease;
+        }
+
+        #wedd1:checked~.d-21 .d-21-1,
+        #wedd2:checked~.d-22 .d-21-1,
+        #wedd3:checked~.d-23 .d-21-1,
+        #wedd4:checked~.d-24 .d-21-1,
+        #wedd5:checked~.d-25 .d-21-1,
+        #wedd6:checked~.d-26 .d-21-1 {
+            display: block;
+        }
+
+        #wedd1:checked~.i-i-f1,
+        #wedd2:checked~.i-i-f2,
+        #wedd3:checked~.i-i-f3,
+        #wedd4:checked~.i-i-f4,
+        #wedd5:checked~.i-i-f5,
+        #wedd6:checked~.i-i-f6 {
+            height: 7vh;
+        }
+
+        .w-w-w-1 .fa-angle-down {
+            transition: all .4s ease;
+        }
+
+        #wedd1:checked+label #t0-t0,
+        #wedd2:checked+label #t0-t0,
+        #wedd3:checked+label #t0-t0,
+        #wedd4:checked+label #t0-t0,
+        #wedd5:checked+label #t0-t0,
+        #wedd6:checked+label #t0-t0 {
+            transform: rotate(180deg);
+        }
+
+        #wedd1:checked+label,
+        #wedd2:checked+label,
+        #wedd3:checked+label,
+        #wedd4:checked+label,
+        #wedd5:checked+label,
+        #wedd6:checked+label {
+            color: #00af43;
+        }
+
+        .w-w-w-1 {
+            margin: 0;
+            margin-bottom: -10px;
+            padding: 0;
+            width: 100%;
+            height: 6vh;
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            place-content: center;
+            z-index: 33;
+            color: #3a3a3a;
+            transition: all .7s ease;
+        }
+
+        .w-w-w-1:hover {
+            color: #ee0c5d;
+        }
+
+        .d-21-1 {
+            width: 55%;
+            height: 65%;
+        }
+
+        .f-i-main {
+            padding-top: 20px;
+        }
+
+        .d-21-1-1 {
+            width: 100%;
+            height: 30%;
+        }
+
+        .d-21-1-2 {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .d-2-2 {
+            width: 48%;
+            height: 100%;
+            place-content: center;
+        }
+
+        .d-2-h2 {
+            font-size: 17px;
+            color: #2b2b2b;
+            margin-bottom: 10px;
+        }
+
+        .d-2-p {
+            font-size: 15px;
+            font-weight: normal;
+            color: #3a3a3a;
+        }
+
+        .d-21-1-3 {
+            width: 100%;
+            height: 30%;
+        }
+
+        .d-1-p {
+            width: 95%;
+            color: #545454;
+            margin: auto;
+            height: 100%;
+            font-size: 20px;
+            text-align: center;
+            place-content: center;
+        }
+
+        .d-3-12 {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .d-3-h2 {
+            width: 100%;
+            height: 30%;
+            text-align: center;
+            font-size: 14px;
+            place-content: center;
+            font-weight: bold;
+        }
+
+        .d-3-b-1 {
+            padding: 3px;
+            width: 20%;
+            padding: 4px;
+            padding-bottom: 6px;
+            height: 35%;
+            margin-right: 10px;
+            border-radius: 30px;
+            outline: none;
+            border: none;
+            background-color: #7e7e7e;
+            color: white;
+            transition: all .3s ease;
+        }
+
+        .d-3-b-1:hover {
+            background-color: white;
+            color: #00af43;
+            width: 19.5%;
+            height: 34%;
+            border: 1px solid #333333;
+        }
+
+        .d-3-b-2 {
+            padding: 4px;
+            padding-bottom: 6px;
+            margin-left: 10px;
+            width: 22.5%;
+            height: 35%;
+            border-radius: 30px;
+            outline: none;
+            border: none;
+            background-color: #7e7e7e;
+            color: white;
+            transition: all .3s ease;
+        }
+
+        .d-3-b-2:hover {
+            background-color: white;
+            color: #00af43;
+            width: 21.5%;
+            height: 34%;
+            border: 1px solid #333333;
+        }
+
+        .m-5-in-main {
+            width: 100%;
+            height: 75vh;
+            background-color: #3b3b3b;
+        }
+
+        .in-5-in {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .in-5-h2 {
+            width: 45%;
+            height: 60%;
+            place-content: center;
+        }
+
+        .in-5-img {
+            width: 50%;
+            height: 100%;
+            background-image: url(IMAGES/worldwide.png);
+            background-position: center;
+            background-size: 540px;
+            background-repeat: no-repeat;
+        }
+
+        .n-5-t1 {
+            font-size: 50px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .n-5-t2 {
+            font-size: 19px;
+            color: white;
+            font-weight: normal;
+        }
+
+        .ijk-1 {
+            width: 90%;
+            height: 50vh;
+            margin: auto;
+        }
+
+        .ijk-h1 {
+            width: 60%;
+            margin: auto;
+            height: 30%;
+            font-size: 40px;
+            color: #2b2b2b;
+            text-align: center;
+            place-content: center;
+        }
+
+        .ijk-div1 {
+            width: 60%;
+            height: 70%;
+            margin: auto;
+            display: flex;
+
+        }
+
+        .ijk-1-1,
+        .ijk-1-6 {
+            width: 10%;
+            height: 100%;
+        }
+
+        .ijk-1-6 {
+            transform: scaleX(-1);
+        }
+
+        .ijk-1-2,
+        .ijk-1-3,
+        .ijk-1-4,
+        .ijk-1-5 {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .abc1 {
+            width: 80%;
+            padding-bottom: 10px;
+            text-decoration: italic;
+            font-style: italic;
+            height: 15%;
+            font-size: 17px;
+            color: #2b2b2b;
+            text-align: center;
+            place-content: center;
+        }
+
+        .abc2 {
+            width: 100%;
+            padding-top: 5px;
+            height: 15%;
+            text-align: center;
+            font-size: 17px;
+            color: #545454;
+        }
+
+        .abc3 {
+            height: 45%;
+            width: 100%;
+            background-image: url(IMAGES/freepik_br_5c1fef80-8ba5-44e7-bcaf-d9014d2b1390.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .abc4 {
+            height: 45%;
+            width: 100%;
+            background-image: url(IMAGES/Screenshot\ 2025-05-21\ 064123.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .abc5 {
+            height: 45%;
+            width: 100%;
+            background-image: url(IMAGES/Screenshot\ 2025-05-21\ 064919.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .abc6 {
+            height: 45%;
+            width: 100%;
+            background-image: url(IMAGES/Screenshot\ 2025-05-21\ 064942.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .svg-png {
+            margin-top: 80px;
+        }
+
+        .last-div-in-main {
+            width: 100%;
+            height: 70vh;
+        }
+
+        .ggy {
+            width: 60%;
+            margin: auto;
+            height: 20%;
+            font-size: 40px;
+            color: #2b2b2b;
+            text-align: center;
+        }
+
+        .ggy-d1 {
+            width: 60%;
+            margin: auto;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .g-d1-1,
+        .g-d1-2,
+        .g-d1-3 {
+            width: 31%;
+            height: 100%;
+            cursor: pointer;
+            box-shadow: 1px 1px 7px 3px #cecdcdd1;
+            border-radius: 1px;
+        }
+
+        .g-d1-1:hover .fa-angle-down,
+        .g-d1-2:hover .fa-angle-down,
+        .g-d1-3:hover .fa-angle-down {
+            background-color: #d5d4d4;
+        }
+
+        .d1-1-1 {
+            width: 100%;
+            height: 60%;
+            background-image: url(IMAGES/ransomware_as_a_service.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .d1-1-20 {
+            width: 100%;
+            height: 60%;
+            background-image: url(IMAGES/keep_your_mobile_safe_while_using_public_wi-fi-2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .d1-1-10 {
+            width: 100%;
+            height: 60%;
+            background-image: url(IMAGES/can_ransomware_infect_cloud_storage.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .d1-1-2 {
+            width: 100%;
+            height: 22%;
+            display: flex;
+            align-items: end;
+        }
+
+        .d1-hh {
+            width: 85%;
+            margin: 0 auto;
+            font-weight: 500;
+            color: #2b2b2b;
+            font-size: 19.5px;
+        }
+
+        .d1-1-3 {
+            width: 85%;
+            margin: auto;
+            height: 18%;
+        }
+
+        .d1-aa {
+            font-size: 25px;
+            text-decoration: none;
+            color: #434343;
+            width: 100%;
+            display: flex;
+            margin-top: 5px;
+            justify-content: space-between;
+        }
+
+        .d1-aa h6 {
+            font-weight: normal;
+        }
+
+        .d1-aa .fa-angle-down {
+            font-size: 27px;
+            width: 25px;
+            border-radius: 30px;
+            height: 30px;
+            place-content: center;
+            align-items: center;
+            transition: all .5s ease;
+            transform: rotate(270deg);
+        }
+
+        .my-one {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+        }
+
+        .one-bb {
+            width: 16%;
+            height: 26.5%;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 3px;
+            color: #6a6969;
+            transition: all .3s ease-in-out;
+            background-color: white;
+            border: 1.5px solid #9f9f9fc6;
+        }
+
+        .one-bb:hover {
+            width: 17%;
+            height: 27.5%;
+            font-size: 16px;
+            color: #ee0c5d;
+            border: 1.5px solid #00af43;
+        }
+
+        footer {
+            width: 100%;
+            height: auto;
+            background-color: #f2f2f2;
+            position: relative;
+        }
+
+        .f1-div,
+        .f2-div,
+        .f3-div {
+            width: 100%;
+            /* border: 1px solid red; */
+        }
+
+        .f1-div {
+            height: 4.35vh;
+            transition: all .8s ease-out;
+            border-top: 1px solid #cccccc;
+        }
+
+        .f1-div:hover {
+            height: 30.19vh;
+        }
+
+        .f2-div {
+            height: 47.83vh;
+            border-bottom: 2px solid #cccccc88;
+            border-top: 2px solid #cccccc88;
+        }
+
+        .f3-div {
+            height: 6.96vh;
+            width: 60%;
+            margin: auto;
+            place-content: center;
+        }
+
+        .f2-1 {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            height: 85%;
+            justify-content: space-between;
+        }
+
+        .f2-2 {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            height: 15%;
+        }
+
+        .f2-1-1 {
+            width: 20%;
+            height: 40%;
+        }
+
+        .f2-1-2 {
+            padding-top: 10px;
+            width: 23%;
+            height: 100%;
+        }
+
+        .f2-in1 {
+            width: 100%;
+            height: 50%;
+            background-image: url(IMAGES/zonealarm-logo.svg);
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+
+        }
+
+        .f2-in2 {
+            width: 100%;
+            height: 50%;
+            font-size: 14px;
+            padding-left: 10px;
+            color: #333333;
+            place-content: center;
+        }
+
+        .f2-1-aa {
+            font-size: 14px;
+            font-weight: bold;
+            color: #343333;
+            text-decoration: none;
+        }
+
+        .f2-1-ul {
+            font-size: 15px;
+            font-weight: normal;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 75%;
+            list-style: none;
+        }
+
+        .f2-1-ul a {
+            text-decoration: none;
+            color: #343333;
+            transition: all .1s ease-in-out;
+        }
+
+        .f2-1-ul a:hover {
+            color: #ee0c5d;
+        }
+
+        .f2-1-3 {
+            padding-top: 10px;
+            width: 15%;
+            height: 85%;
+        }
+
+        .f2-1-4 {
+            padding-top: 10px;
+            width: 15%;
+            height: 55%;
+        }
+
+        .f2-2-1 {
+            width: 20%;
+            height: 100%;
+            place-content: center;
+        }
+
+        .f2-2-1 .fa-brands {
+            font-size: 25px;
+            margin-right: 8px;
+            color: #303030;
+            transition: all .2s ease-in-out;
+        }
+
+        .f2-2-1 .fa-brands:hover {
+            color: #ee0c5d;
+        }
+
+        .f2-2-2 {
+            width: 20%;
+            height: 100%;
+            place-content: center;
+        }
+
+        .selection {
+            width: 34%;
+            height: 20px;
+            border: none;
+            outline: none;
+            background-color: #f2f2f2;
+            font-size: 15px;
+            font-weight: normal;
+            color: #303030;
+            transition: all .2s ease;
+        }
+
+        .selection:hover {
+            color: #ee0c5d;
+        }
+
+        .k1 {
+            color: #434343;
+            font-size: 14px;
+            margin-right: 15px;
+            text-decoration: none;
+
+        }
+
+        .k2 {
+            display: inline;
+            font-size: 13px;
+            color: #434343;
+            float: right;
+        }
+
+        .f1-d {
+            width: 30%;
+            height: 0%;
+            margin: auto;
+            text-align: center;
+            transition: all .3s ease;
+            opacity: 0;
+        }
+
+        .f1-div:hover .f1-d {
+            opacity: 1;
+            height: 94%;
+        }
+
+        .f1-div:hover .f1-d .f1-1-h3 {
+            height: 40px;
+        }
+
+        .f1-1-h3 {
+            font-size: 20px;
+            place-content: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2b2b2b;
+            height: 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-div:hover .f1-d .f1-1h5 {
+            height: 10px;
+        }
+
+        .f1-1h5 {
+            font-size: 15px;
+            font-weight: 500;
+            color: #434343;
+            height: 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-div:hover .f1-d .f1-1-ii {
+            height: 45px;
+        }
+
+        .f1-1-ii {
+            width: 95%;
+            height: 0px;
+            padding: 0px 5px 0px 5px;
+            margin: 15px 0px 15px 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-div:hover .f1-d .f1-1-pp {
+            height: 10px;
+        }
+
+        .f1-1-pp {
+            margin-left: 10px;
+            font-size: 12px;
+            font-weight: normal;
+            color: #434343;
+            float: left;
+            height: 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-1-pp a {
+            font-size: 12px;
+            color: #434343;
+        }
+
+        .f1-div:hover .f1-d .f1-1-bb {
+            height: 50px;
+        }
+
+        .f1-1-bb {
+            display: block;
+            width: 150px;
+            height: 0px;
+            margin: 45px auto;
+            color: white;
+            font-size: 16px;
+            background-color: #00af43;
+            border: 1px solid #545454dd;
+            transition: all .1s ease;
+        }
+
+        .f1-1-bb:hover {
+            background-color: #21d365b0;
+        }
+
+        .button-con .fa-angle-down {
+            font-size: 15px;
+            margin-left: 3px;
+        }
+        .ff-tog {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #00af43;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="menu-nav-con">
+            <div class="menu-nav">
+                <a href="index(home).html" class="logo-div"></a>
+                <div class="nav-div">
+                    <ol class="nav-item">
+                        <li class="f1">
+                            <input type="checkbox" id="ttoogg" hidden>
+                            <label for="ttoogg" class="ttoo1">
+                                <div class="hho-con1">
+                                    <div class="hho1"></div>
+                                </div><a href="index(home).html" class="ff-tog">For Home</a><i class="fa fa-angle-down"></i>
+                            </label>
+                            <div class="hid-me">
+                                <div class="h-d-1">
+                                    <h6 class="d-1-1">PC Protection</h6>
+                                    <a class="a-1-1" href="#">ZoneAlarm Extreme Security NextGen</a>
+                                    <a class="a-1-1" href="#">ZoneAlarm Pro Antivirus + Firewall</a>
+                                    <a class="a-1-1" href="#">ZoneAlarm Anti-Ransomware</a>
+                                    <a class="a-1-1" href="#">Compare PC Products</a>
+                                </div>
+                                <div class="h-d-2">
+                                    <h6 class="d-1-1-1">Mobile Apps</h6>
+                                    <a href="#" class="b-1-1">ZoneAlarm Mobile Security</a>
+                                    <h6 class="d-1-1-1">Free PC Security</h6>
+                                    <a href="" class="b-1-1">ZoneAlarm Free Antivirus</a>
+                                    <a href="" class="b-1-1">ZoneAlarm Free Firewall</a>
+                                </div>
+                                <div class="h-d-3">
+                                    <ul class="w-w">
+                                        <h6 class="d-1-1-1">Useful Links</h6>
+                                        <li class="j-w"><i class="fa fa-address-book"></i>Resources</li>
+                                        <li class="j-w"><i class="fa fa-comment"></i>Blog</li>
+                                        <li class="j-w"><i class="fa fa-user-circle"></i>Login to My Account</li>
+                                        <li class="j-w"><i class="fa fa-newspaper-o"></i>Forum</li>
+                                        <li class="j-w"><i class="fa fa-envelope"></i>Testimonials</li>
+                                        <li class="j-w"><i class="fa fa-building"></i>About Us</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="f2">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="index(business).html">For Business</a>
+                        </li>
+                        <li class="f3">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="#">Partners</a>
+                        </li>
+                        <li class="f4">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="#">Support</a>
+                        </li>
+                        <li class="f5">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="#">Renew</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="lang-div">
+                    <i class="fa fa-user-o"></i>
+                    <input type="checkbox" id="toggle-me" hidden>
+                    <label for="toggle-me" class="button-con">English/EUR<i class="fa fa-angle-down"></i></label>
+                    <div class="hidden-div">
+                        <div class="div1">
+                            <label for="lang" class="language-label">Language</label><br>
+                            <select class="language-input">
+                                <option value="#">English</option>
+                                <option value="French">French</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="Arabic">Arabic</option>
+                                <option value="Seria">Seria</option>
+                            </select>
+                        </div>
+                        <div class="div2">
+                            <label for="Currency" class="language-label">Currency</label><br>
+                            <select class="language-input">
+                                <option value="£">EUR - Euro</option>
+                                <option value="$">USD - Dollar</option>
+                                <option value="$">CAD - Canadian Dollar</option>
+                                <option value="₮">AUD - Austrialian Dollar</option>
+                                <option value="₹">YAN - Yearn</option>
+                                <option value="₦">NAR - Naira</option>
+                            </select>
+                        </div>
+                        <div class="div3">
+                            <button class="save-button">SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="bg-1">
+            <div class="renal">
+                <div class="renal-text">
+                    <h2 class="fst">New Release!</h2>
+                    <h2 class="fsw">ZoneAlarm Extreme Security <span class="gir">NextGen</span></h2>
+                    <h1 class="ccu">Complete <span class="hhy">security</span> & <span class="ngt"> privacy</span> suite
+                        for your devices</h1>
+                    <p class="guy">Next-gen antivirus with award-winning Anti-Ransomware, advanced phishing protection,
+                        and secure browsing experience</p>
+                    <button class="ven">GET PROTECTED</button>
+                    <h6 class="kils">Available for Windows, Android, and iOS</h6>
+                </div>
+                <div class="renal-image">
+                    <img src="IMAGES/zang_box_trust.png" class="image11">
+                </div>
+            </div>
+        </section>
+        <div class="main">
+            <div class="sub-main">
+                <div class="sub-1">
+                    <div class="sub-img">
+                        <img src="IMAGES/sub-img-1.png" alt="" class="sub-img11">
+                    </div>
+                    <h4 class="sub-bt">PC Protection</h4>
+                    <h6 class="sub-st">All our PC solutions in one place</h6>
+                    <div class="sub-b">
+                        <button class="sub-b11">explore</button>
+                    </div>
+                </div>
+                <div class="sub-2">
+                    <div class="sub-img">
+                        <img src="IMAGES/Screenshot 2025-05-19 122747.png" alt="" class="sub-img12">
+                    </div>
+                    <h4 class="sub-bt">Mobile Security</h4>
+                    <h6 class="sub-st">Protection for iOS and Android</h6>
+                    <div class="sub-b">
+                        <button class="sub-b11">explore</button>
+                    </div>
+                </div>
+                <div class="sub-3">
+                    <div class="sub-img">
+                        <img src="IMAGES/Screenshot 2025-05-19 122803.png" alt="" class="sub-img13">
+                    </div>
+                    <h4 class="sub-bt">Business</h4>
+                    <h6 class="sub-st">Enterprise-level security for SMBs</h6>
+                    <div class="sub-b">
+                        <button class="sub-b11">explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="first-div-in-main">
+            <div class="in-main">
+                <div class="in-main-text">
+                    <div class="main-text">
+                        <h4 class="t-4">ZoneAlarm Anti-Ransomware</h4>
+                        <h2 class="t-2">Award-winning protection against cyber blackmail</h2>
+                        <p class="p-p">Our award-winning solution protects your PC data from today’s #1 worldwide cyber
+                            threat: ransomware.</p>
+                        <div class="t-t">
+                            <div class="i-h"></div>
+                            <div class="t-h">
+                                <h5 class="t-h-5">Two-time winner<br><span class="t-h-p">PCMag Editors' Choice</span>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="t-b">
+                            <button class="t-bb">GET PROTECTED</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="in-main-img"></div>
+            </div>
+        </div>
+        <div class="second-div-in-main">
+            <div class="sec-main-div">
+                <div class="sec-image"></div>
+                <div class="sec-text">
+                    <h3 class="s-t-3">ZoneAlarm Mobile Security</h3>
+                    <h2 class="s-t-2">Enjoy a safe mobile life anytime, anywhere</h2>
+                    <p class="s-t-p">Our innovative app puts your peace of mind in your own hands, with the fundamental
+                        protection you don’t get from any other solution.</p>
+                    <div class="s-t-b">
+                        <button class="s-t-bb">GET PROTECTED</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="third-div-in-main">
+            <div class="third-main-div">
+                <div class="third-text">
+                    <h2 class="th-h-2">Free, reliable and powerful</h2>
+                    <h4 class="th-h-4">Our essential Firewall and Antivirus solutions – completely free</h4>
+                </div>
+                <div class="third-image">
+                    <div class="t-i-1">
+                        <div class="t-i-2">
+                            <div class="i-i-img"></div>
+                            <h4 class="h-h-44">ZoneAlarm</h4>
+                            <h2 class="h-h-22">Free Firewall</h2>
+                            <p class="h-h-pp">Block unwanted traffic and make yourself invisible to hackers with the
+                                world's No. 1 Firewall solution</p>
+                            <div class="b-b-but">
+                                <button class="b-b-bb">DOWNLOAD FOR FREE</button>
+                                <a href="#" class="h-h-aa">Learn more</a>
+                            </div>
+                        </div>
+                        <div class="t-i-2">
+                            <div class="i-i-img2"></div>
+                            <h4 class="h-h-44">ZoneAlarm</h4>
+                            <h2 class="h-h-22">Free Antivirus</h2>
+                            <p class="h-h-pp">The essential antivirus and firewall protection against viruses and
+                                identity theft.</p>
+                            <div class="b-b-but">
+                                <button class="b-b-bb">DOWNLOAD FOR FREE</button>
+                                <a href="#" class="h-h-aa">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="forth-div-in-main">
+            <div class="f-main">
+                <h2 class="j-h-2">Keeping you safe is what we do best</h2>
+                <p class="j-h-p">We are proud to protect home users and small businesses from emerging cyber threats
+                    with the same next-generation technology trusted by the world’s largest companies, tailored to your
+                    needs.</p>
+            </div>
+            <div class="f-i-main">
+                <div class="i-i-f1">
+                    <input type="checkbox" id="wedd1" hidden>
+                    <label for="wedd1" class="w-w-w-1">World's No. 1 Firewall<i id="t0-t0"
+                            class="fa fa-angle-down"></i></label>
+                    <i class="fa fa-angle-down"
+                        style="display: block; opacity: .4; margin: 0; padding: 0; place-content: center; text-align: center; margin-bottom: -18px; font-size: 30px; background-color: transparent; color: #a6a6a6d1;"></i>
+                    <div class="d-21">
+                        <div class="d-21-1">
+                            <div class="d-21-1-1">
+                                <p class="d-1-p">ZoneAlarm is proud to be the world’s first personal firewall ever
+                                    created for home PCs, and one of the most powerful applications of its kind.</p>
+                            </div>
+                            <div class="d-21-1-2">
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">What we do</h2>
+                                    <p class="d-2-p">We make your PC invisible to hackers by blocking even the most
+                                        recent, sophisticated attack methods that bypass traditional security suites.
+                                    </p>
+                                </div>
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">How we do it</h2>
+                                    <p class="d-2-p">Our two-way firewall protects your device from inbound & outbound
+                                        attacks, blocking intruders at the front door and even catching them on their
+                                        way out.</p>
+                                </div>
+                            </div>
+                            <div class="d-21-1-3">
+                                <h2 class="d-3-h2">Found in these products</h2>
+                                <div class="d-3-12">
+                                    <button class="d-3-b-1">ZoneAlarm Extreme Security</button>
+                                    <button class="d-3-b-2">ZoneAlarm Pro Antivirus & Firewall</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-i-f2">
+                    <input type="checkbox" id="wedd2" hidden>
+                    <label for="wedd2" class="w-w-w-1">Powerful Antivirus <i class="fa fa-angle-down"
+                            id="t0-t0"></i></label>
+                    <i class="fa fa-angle-down"
+                        style="display: block; opacity: .4; margin: 0; padding: 0; place-content: center; text-align: center; margin-bottom: -18px; font-size: 30px; background-color: transparent; color: #a6a6a6d1;"></i>
+                    <div class="d-22">
+                        <div class="d-21-1">
+                            <div class="d-21-1-1">
+                                <p class="d-1-p">Millions of users worldwide trust our powerful antivirus software.
+                                    After all, free antivirus is simply not enough. You need real protection!</p>
+                            </div>
+                            <div class="d-21-1-2">
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">What we do</h2>
+                                    <p class="d-2-p">We shield your PC from newly discovered viruses, spyware, Trojans
+                                        and worms with the most advanced real-time antivirus and anti-spyware.</p>
+                                </div>
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">How we do it</h2>
+                                    <p class="d-2-p">We detect and remove threats by scanning against an always
+                                        up-to-date cloud database of antivirus signatures.</p>
+                                </div>
+                            </div>
+                            <div class="d-21-1-3">
+                                <h2 class="d-3-h2">Found in these products</h2>
+                                <div class="d-3-12">
+                                    <button class="d-3-b-1">ZoneAlarm Extreme Security</button>
+                                    <button class="d-3-b-2">ZoneAlarm Pro Antivirus & Firewall</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-i-f3">
+                    <input type="checkbox" id="wedd3" hidden>
+                    <label for="wedd3" class="w-w-w-1">Advanced Anti-Phishing <i class="fa fa-angle-down"
+                            id="t0-t0"></i></label>
+                    <i class="fa fa-angle-down"
+                        style="display: block; opacity: .4; margin: 0; padding: 0; place-content: center; text-align: center; margin-bottom: -18px; font-size: 30px; background-color: transparent; color: #a6a6a6d1;"></i>
+                    <div class="d-23">
+                        <div class="d-21-1">
+                            <div class="d-21-1-1">
+                                <p class="d-1-p">Our technology protects your privacy from online phishing attacks
+                                    aiming to steal your credentials – with maximum security and an optimal browsing
+                                    experience</p>
+                            </div>
+                            <div class="d-21-1-2">
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">What we do</h2>
+                                    <p class="d-2-p">We protect your valuable information from the cyber criminals
+                                        trying to steal your credentials by pretending to be trustworthy websites.</p>
+                                </div>
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">How we do it</h2>
+                                    <p class="d-2-p">We scan every field that requires you to enter your personal
+                                        details before you actually do so, with real-time dynamic analysis and highly
+                                        accurate algorithms.</p>
+                                </div>
+                            </div>
+                            <div class="d-21-1-3">
+                                <h2 class="d-3-h2">Found in these products</h2>
+                                <div class="d-3-12">
+                                    <button class="d-3-b-1">ZoneAlarm Extreme Security</button>
+                                    <button class="d-3-b-2">ZoneAlarm Pro Antivirus & Firewall</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-i-f4">
+                    <input type="checkbox" id="wedd4" hidden>
+                    <label for="wedd4" class="w-w-w-1">Ransomware Protection <i class="fa fa-angle-down"
+                            id="t0-t0"></i></label>
+                    <i class="fa fa-angle-down"
+                        style="display: block; opacity: .4; margin: 0; padding: 0; place-content: center; text-align: center; margin-bottom: -18px; font-size: 30px; background-color: transparent; color: #a6a6a6d1;"></i>
+                    <div class="d-24">
+                        <div class="d-21-1">
+                            <div class="d-21-1-1">
+                                <p class="d-1-p">Your antivirus can’t combat ransomware. We can. ZoneAlarm
+                                    Anti-Ransomware was chosen by PC Magazine as Editor’s Choice for two consecutive
+                                    years – protecting from the world’s #1 cyber threat today.</p>
+                            </div>
+                            <div class="d-21-1-2">
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">What we do</h2>
+                                    <p class="d-2-p">We protect you from the hackers trying to encrypt your confidential
+                                        data and hold your PC hostage until you pay the ransom fee.</p>
+                                </div>
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">How we do it</h2>
+                                    <p class="d-2-p">We use Check Point’s award-winning technology to encrypt your
+                                        sensitive data and never-before-seen ransomware infections, all the while
+                                        restoring your files.</p>
+                                </div>
+                            </div>
+                            <div class="d-21-1-3">
+                                <h2 class="d-3-h2">Found in these products</h2>
+                                <div class="d-3-12">
+                                    <button class="d-3-b-1">ZoneAlarm Extreme Security</button>
+                                    <button class="d-3-b-2">ZoneAlarm Pro Antivirus & Firewall</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-i-f5">
+                    <input type="checkbox" id="wedd5" hidden>
+                    <label for="wedd5" class="w-w-w-1">Mobile Security <i class="fa fa-angle-down"
+                            id="t0-t0"></i></label>
+                    <i class="fa fa-angle-down"
+                        style="display: block; opacity: .4; margin: 0; padding: 0; place-content: center; text-align: center;opacity: 0.4; margin-bottom: -18px; font-size: 30px; background-color: transparent; color: #a6a6a6d1;"></i>
+                    <div class="d-25">
+                        <div class="d-21-1">
+                            <div class="d-21-1-1">
+                                <p class="d-1-p">We secure your mobile digital life with the essential protection that
+                                    free traditional solutions don’t provide.</p>
+                            </div>
+                            <div class="d-21-1-2">
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">What we do</h2>
+                                    <p class="d-2-p">We enable you to shop, bank, check emails, and post on social media
+                                        with the knowledge that you’re secure at every moment.</p>
+                                </div>
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">How we do it</h2>
+                                    <p class="d-2-p">We protect your device when it connects to Wi-Fi networks, and
+                                        block attempts to remotely seize control of your camera and mic. You’re
+                                        immediately notified about malicious apps, including ransomware.</p>
+                                </div>
+                            </div>
+                            <div class="d-21-1-3">
+                                <h2 class="d-3-h2">Found in these products</h2>
+                                <div class="d-3-12">
+                                    <button class="d-3-b-1">ZoneAlarm Extreme Security</button>
+                                    <button class="d-3-b-2">ZoneAlarm Pro Antivirus & Firewall</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-i-f6">
+                    <input type="checkbox" id="wedd6" hidden>
+                    <label for="wedd6" class="w-w-w-1" style="margin-bottom: 2px;">Threat Emulation <i
+                            class="fa fa-angle-down" id="t0-t0"></i></label>
+                    <div class="d-26">
+                        <div class="d-21-1">
+                            <div class="d-21-1-1">
+                                <p class="d-1-p">This powerful weapon is extremely effective at spotting malicious files
+                                    and cyberattacks that evade traditional</p>
+                            </div>
+                            <div class="d-21-1-2">
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">What we do</h2>
+                                    <p class="d-2-p">We make sure you’ll only open documents and email attachments that
+                                        are safe from malware attacks, including unknown zero-day types.</p>
+                                </div>
+                                <div class="d-2-2">
+                                    <h2 class="d-2-h2">How we do it</h2>
+                                    <p class="d-2-p">We inspect files and email attachments in a secure cloud-based
+                                        environment, blocking malicious activities before they get the chance to harm
+                                        your computer.</p>
+                                </div>
+                            </div>
+                            <div class="d-21-1-3">
+                                <h2 class="d-3-h2">Found in these products</h2>
+                                <div class="d-3-12">
+                                    <button class="d-3-b-1">ZoneAlarm Extreme Security</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m-5-in-main">
+            <div class="in-5-in">
+                <div class="in-5-h2">
+                    <h2 class="n-5-t1">Protecting more than <span class="num9" style="color: #ee0c5d;"> 100,<span
+                                class="num3" style="color: #00af43;">000</span>,000</span> users worldwide</h2>
+                    <p class="n-5-t2">Our advanced cyber security solutions use business-class protection to secure
+                        millions of home users’ PCs and mobile devices against the latest worldwide cyber threats.</p>
+                </div>
+                <div class="in-5-img"></div>
+            </div>
+        </div>
+        <div class="ijk-1">
+            <h1 class="ijk-h1">Award-winning Protection</h1>
+            <div class="ijk-div1">
+                <div class="ijk-1-1">
+                    <img class="svg-png" src="IMAGES/awards_decoration (1).svg" alt="">
+                </div>
+                <div class="ijk-1-2">
+                    <h3 class="abc1">"An easy winner"</h3>
+                    <div class="abc3"></div>
+                    <h3 class="abc2">PCMag</h3>
+                </div>
+                <div class="ijk-1-3">
+                    <h3 class="abc1">"100% protection"</h3>
+                    <div class="abc4"></div>
+                    <h3 class="abc2">PCMag</h3>
+                </div>
+                <div class="ijk-1-4">
+                    <h3 class="abc1">"Managed to pass all tests"</h3>
+                    <div class="abc5"></div>
+                    <h3 class="abc2">PCMag</h3>
+                </div>
+                <div class="ijk-1-5">
+                    <h3 class="abc1">"BEST+++ AVLab Certificate"</h3>
+                    <div class="abc6"></div>
+                    <h3 class="abc2">PCMag</h3>
+                </div>
+                <div class="ijk-1-6">
+                    <img class="svg-png" src="IMAGES/awards_decoration (1).svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="last-div-in-main">
+            <h1 class="ggy">Top Security News</h1>
+            <div class="ggy-d1">
+                <div class="g-d1-1">
+                    <div class="d1-1-1"></div>
+                    <div class="d1-1-2">
+                        <h3 class="d1-hh">Ransomware as a Service (RaaS) – How Real is the Threat?</h3>
+                    </div>
+                    <div class="d1-1-3">
+                        <a href="#" class="d1-aa">
+                            <h6>Read more</h6>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="g-d1-2">
+                    <div class="d1-1-20"></div>
+                    <div class="d1-1-2">
+                        <h3 class="d1-hh">Keep Your Mobile Safe While Using Public Wi-Fi</h3>
+                    </div>
+                    <div class="d1-1-3">
+                        <a href="#" class="d1-aa">
+                            <h6>Read more</h6>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="g-d1-3">
+                    <div class="d1-1-10"></div>
+                    <div class="d1-1-2">
+                        <h3 class="d1-hh">Can Ransomware Infect Cloud Storage?</h3>
+                    </div>
+                    <div class="d1-1-3">
+                        <a href="#" class="d1-aa">
+                            <h6>Read more</h6>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="my-one">
+                <button class="one-bb">MORE ARTICLES</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="f1-div">
+            <form class="f1-d">
+                <h3 class="f1-1-h3">Stay updated</h3>
+                <h5 class="f1-1h5">Subscribe to our newsletter to receive the latest security news, tips and promotions.
+                </h5>
+                <input class="f1-1-ii" type="text" placeholder="Enter Email Address" required>
+                <p class="f1-1-pp">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and
+                    <a href="">Terms of Service</a> apply
+                </p>
+                <input class="f1-1-bb" type="button" value="SUBMIT">
+            </form>
+        </div>
+        <div class="f2-div">
+            <div class="f2-1">
+                <div class="f2-1-1">
+                    <div class="f2-in1"></div>
+                    <p class="f2-in2">100 Oracle Parkway, Suite 800 <br>Redwood City, CA 94065 <br>United States</p>
+                </div>
+                <div class="f2-1-2">
+                    <a href="" class="f2-1-aa">Products</a>
+                    <ul class="f2-1-ul">
+                        <li><a href="">ZoneAlarm Extreme Security NextGen</a></li>
+                        <li><a href="">ZoneAlarm Pro Antivirus + Firewall</a></li>
+                        <li><a href="">ZoneAlarm Free Antivirus</a></li>
+                        <li><a href="">ZoneAlarm Free Firewall</a></li>
+                        <li><a href="">ZoneAlarm Anti-Ransomware</a></li>
+                        <li><a href="">ZoneAlarm Mobile Security</a></li>
+                        <li><a href="">Small Business Security</a></li>
+                        <li><a href="">Compare PC Products</a></li>
+                        <li><a href="">Free Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="f2-1-3">
+                    <a href="" class="f2-1-aa">Useful Links</a>
+                    <ul class="f2-1-ul">
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Resources</a></li>
+                        <li><a href="">Login to MyAccount</a></li>
+                        <li><a href="">Support</a></li>
+                        <li><a href="">Forum</a></li>
+                        <li><a href="">Testimonials</a></li>
+                        <li><a href="">Beta for Windows</a></li>
+                        <li><a href="">Beta for Mac</a></li>
+                    </ul>
+                </div>
+                <div class="f2-1-4">
+                    <a href="" class="f2-1-aa">About ZoneAlarm</a>
+                    <ul class="f2-1-ul">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Partner with ZoneAlarm</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Antivirus Test Result</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f2-2">
+                <div class="f2-2-1">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="f2-2-2">
+                    <i class="fa fa-globe"
+                        style="margin-left: 20px; color: #545454; font-size: 16px; transition: all .2s ease;"></i>
+                    <select name="country" class="selection">
+                        <option value="en" selected>English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="it">Italiano</option>
+                        <option value="es">Español</option>
+                        <option value="zh">繁體中文</option>
+                    </select>
+                    <i class="fa-solid fa-coins"
+                        style="margin-left: 20px; color: #545454; font-size: 16px; transition: all .2s ease;"></i>
+                    <select name="coin" class="selection" style="width: 55px;">
+                        <option value="usd">USD</option>
+                        <option value="eur" selected>EUR</option>
+                        <option value="gbp">GBP</option>
+                        <option value="cad">CAD</option>
+                        <option value="aud">AUD</option>
+                        <option value="hkd">HKD</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="f3-div">
+            <a class="k1" href="">Privacy Policy</a>
+            <a class="k1" href=""> Terms of Use</a>
+            <a class="k1" href=""> Returns Policy</a>
+            <p class="k2">© ZoneAlarm is a product of Check Point Software Technologies, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

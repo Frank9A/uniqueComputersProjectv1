@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 0vh;
+        }
+
+        header {
+            width: 100%;
+            height: 95vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-nav-con {
+            width: 100%;
+            height: 7%;
+            border-bottom: 1px solid #cdcdcdd2;
+        }
+
+        .menu-nav {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo-div,
+        .nav-div,
+        .lang-div {
+            width: 20%;
+            height: 100%;
+        }
+
+        .logo-div {
+            background-image: url(IMAGES/zonealarm-logo.svg);
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+
+        .nav-div {
+            width: 50%;
+        }
+
+        .nav-item {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .nav-item .f1,
+        .f2,
+        .f3,
+        .f4,
+        .f5 {
+            transition: all .1s ease-in-out;
+            height: 100%;
+            width: 19%;
+            place-content: center;
+            text-align: center;
+        }
+
+        /* li:hover .hho{
+            width: 100%;
+        } */
+        li:hover .hh01 {
+            text-shadow: .2px .2px .5px #ee0c5fb8;
+        }
+
+        /* li:hover .hho1{
+            width: 100%;
+        } */
+        .f1 {
+            z-index: 33;
+        }
+
+        .f2 {
+            margin-right: 10px;
+        }
+
+        .fa-angle-down {
+            font-size: 21px;
+            font-weight: normal;
+        }
+
+        .lang-div {
+            padding-top: 20px;
+            z-index: 99;
+        }
+
+        .button-div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-con:hover {
+            color: #f82020;
+        }
+
+        .button-con {
+            height: 30%;
+            border-left: 1px solid #c0c0c0a7;
+            padding: 5px;
+            font-size: 14px;
+            padding-left: 10px;
+            transition: all .4s ease;
+        }
+
+        #toggle-me:checked~.hidden-div {
+            opacity: 1;
+            display: block;
+        }
+
+        .button-con:focus {
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .fa-user-o {
+            margin-right: 15px;
+            transition: 0.5s;
+            position: relative;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .fa-user-o:hover {
+            color: #f82020;
+            cursor: pointer;
+        }
+
+        .fa-angle-down {
+            font-size: 21px;
+            font-weight: normal;
+            margin-left: 5px;
+            transition: all .2s ease;
+        }
+
+        .hidden-div {
+            opacity: 0;
+            width: 90%;
+            margin: auto;
+            margin-left: 0;
+            height: 250px;
+            margin-top: 30px;
+            background-color: #ee0c5f70;
+            border-radius: 5px;
+            box-shadow: 1px 1px 24px 1px #98989872;
+            display: none;
+        }
+
+        .div1,
+        .div2,
+        .div3 {
+            width: 100%;
+            height: 33%;
+        }
+
+        .div1,
+        .div2 {
+            place-content: end;
+        }
+
+        .div3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .language-label {
+            margin-left: 9px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .language-input,
+        .lantt {
+            width: 90%;
+            height: 55%;
+            border-radius: 5px;
+            outline: none;
+            border: #ff0000e8;
+            margin-left: 9px;
+            margin-top: 2px;
+            padding-left: 3px;
+            background-color: #f0efefd1;
+        }
+
+        .save-button {
+            width: 90%;
+            height: 55%;
+            color: white;
+            background-color: #f2226ed2;
+            font-size: 18px;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            border-radius: 2px;
+            transition: all .4s ease;
+        }
+
+        .save-button:hover {
+            background-color: white;
+            height: 50%;
+            width: 80%;
+            font-size: 15px;
+            color: #ff226ed2;
+        }
+
+        .hh01 {
+            text-decoration: none;
+            color: black;
+            transition: all .6s ease;
+        }
+
+        .renal {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gir {
+            color: #ee0c5d;
+        }
+
+        .ccu {
+            font-size: 40px;
+            color: #343333;
+            margin-bottom: 20px;
+
+        }
+
+        .hhy {
+            color: #ee0c5d;
+        }
+
+        .ngt {
+            color: #00af43;
+        }
+
+        .guy {
+            color: black;
+            font-size: 16px;
+            padding-bottom: 30px;
+        }
+
+        .ven {
+            width: 30%;
+            height: 50px;
+            font-size: 20px;
+            background-color: #00af43;
+            color: white;
+            border-radius: 3px;
+            box-shadow: .5px .5px 5px 0px #ee0c5fc4;
+            border: none;
+            transition: all .4s ease;
+            margin-bottom: 20px;
+        }
+
+        .ven:hover {
+            width: 27%;
+            height: 40px;
+            background-color: white;
+            color: #00af43;
+            margin: 10px;
+            margin-bottom: 20px;
+            box-shadow: .5px .5px 2.5px 0px #ee0c5fc4;
+        }
+
+        .kils {
+            color: #343333;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .ttoo1 {
+            width: 100%;
+            height: 100%;
+            font-size: 17px;
+            display: block;
+        }
+
+        .hid-me {
+            justify-content: end;
+            align-items: start;
+            width: 1070px;
+            margin-left: -270px;
+            height: 350px;
+            background-color: white;
+            cursor: pointer;
+            opacity: 0;
+            display: none;
+            border: 1px solid #7d7d7d5d;
+        }
+
+        .h-d-1 {
+            margin-top: 40px;
+            width: 33%;
+            height: 52%;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-around;
+        }
+
+        .h-d-2 {
+            width: 33%;
+            height: 100%;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .f1,
+        .f2,
+        .f3,
+        .f4,
+        .f5 {
+            place-content: start;
+        }
+
+        .hho-con {
+            width: 100%;
+            height: 10%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .hho-con1 {
+            width: 100%;
+            height: 10%;
+            margin-bottom: 11px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .f1:hover .hho1,
+        .f2:hover .hho,
+        .f3:hover .hho,
+        .f4:hover .hho,
+        .f5:hover .hho {
+            width: 100%;
+        }
+
+        .hho {
+            width: 0%;
+            height: 100%;
+            background-color: #ee0c5d;
+            transition: all .3s ease-in-out;
+        }
+
+        .hho1 {
+            width: 0%;
+            height: 100%;
+            background-color: #ee0c5d;
+            transition: all .3s ease-in-out;
+        }
+
+        .h-d-3 {
+            width: 33%;
+            height: 100%;
+            text-align: start;
+            display: flex;
+            justify-content: end;
+            background-color: #f8f8f8;
+            border-left: 1px solid #7d7d7d5d;
+        }
+
+        .d-1-1 {
+            width: 87%;
+            font-size: 15px;
+            color: #343333;
+        }
+
+        .d-1-1-1 {
+            width: 87%;
+            font-size: 15px;
+            color: #343333;
+            margin-top: 45px;
+        }
+
+        .a-1-1 {
+            width: 87%;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #434343;
+            font-weight: normal;
+            transition: all .2s ease;
+        }
+
+        .a-1-1:hover {
+            color: #ee0c5d;
+        }
+
+        .b-1-1 {
+            width: 87%;
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #434343;
+            font-weight: normal;
+            transition: all .2s ease;
+        }
+
+        .b-1-1:hover {
+            color: #ee0c5d;
+        }
+
+        .w-w {
+            width: 87%;
+            height: 100%;
+            list-style: none;
+        }
+
+        .j-w {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #434343;
+            transition: all .1s ease;
+        }
+
+        .fa-building,
+        .fa-envelope,
+        .fa-newspaper-o,
+        .fa-user-circle,
+        .fa-comment,
+        .fa-address-book {
+            margin-right: 10px;
+            transition: all .1s ease;
+        }
+
+        .j-w:hover {
+            color: #ee0c5d;
+        }
+
+        #ttoogg:checked~.hid-me {
+            opacity: 1;
+            cursor: pointer;
+            display: flex;
+        }
+
+        .ttoo {
+            height: 100%;
+        }
+
+        main {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            margin-top: -25dvh;
+        }
+
+        .image-up-cn {
+            width: 100%;
+            height: 32vh;
+            background: linear-gradient(rgba(7, 7, 7, 0.757)), url(./IMAGES/diverse-business-colleagues-reporting-female-boss.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            place-content: center;
+        }
+
+        .up-cn-h2 {
+            font-size: 55px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .up-cn-p {
+            font-size: 22px;
+            font-weight: lighter;
+            color: white;
+        }
+
+        .ff-tog {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: black;
+        }
+
+        .text-2-container {
+            width: 60%;
+            height: 30vh;
+            margin: auto;
+            place-content: center;
+        }
+
+        .text-2 {
+            width: 92%;
+            margin: auto;
+            height: 50%;
+            font-size: 19px;
+            color: #767676;
+            text-align: center;
+            font-weight: 340;
+        }
+
+        .gain-f {
+            height: 85vh;
+            width: 60%;
+            margin: auto;
+            display: flex;
+
+        }
+
+        .gain-in-1 {
+            height: 100%;
+            width: 15%;
+        }
+
+        .gain-in-2 {
+            height: 100%;
+            width: 53%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gain-in-3 {
+            height: 100%;
+            width: 32%;
+        }
+
+        .gain-in-1-img {
+            width: 100%;
+            height: 30%;
+            background: url(IMAGES/ng_300.png);
+            background-position: center;
+            background-size: 160px;
+            background-repeat: no-repeat;
+        }
+
+        .gain-in-2-img {
+            width: 100%;
+            height: 8%;
+        }
+
+        .in-2-list {
+            display: flex;
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .in-2-list a {
+            font-size: 26px;
+            margin-right: 10px;
+            color: #2a2929;
+            text-decoration: none;
+        }
+
+        .gain-p-p {
+            font-size: 14px;
+            font-weight: lighter;
+            color: #343333;
+            padding-bottom: 5px;
+            padding-left: 10px;
+        }
+
+        .gain-in-3-img {
+            width: 100%;
+            height: 18%;
+        }
+
+        .img-3-1 {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .img-3-2 {
+            height: 50%;
+            width: 100%;
+            display: flex;
+        }
+
+        .in-mig1 {
+            width: 50%;
+            height: 100%;
+            background: url(IMAGES/freepik_br_5c1fef80-8ba5-44e7-bcaf-d9014d2b1390.png);
+            background-position: center;
+            background-position-x: -2px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .in-mig2 {
+            width: 50%;
+            height: 100%;
+            background: url(IMAGES/Screenshot\ 2025-05-21\ 064123.png);
+            background-position: center;
+            background-position-x: -8px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .in-mig3 {
+            width: 40%;
+            height: 100%;
+            background: url(IMAGES/Screenshot\ 2025-05-21\ 064919.png);
+            background-position: center;
+            background-position-x: -2px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .in-mig4 {
+            width: 60%;
+            height: 100%;
+            background: url(IMAGES/Screenshot\ 2025-05-21\ 064942.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-position-x: -1px;
+            background-size: 80px;
+        }
+
+        .in-div-1 {
+            width: 93%;
+            height: 31%;
+            border-bottom: 1px solid #d7d6d6;
+        }
+
+        .in-div-2 {
+            width: 95%;
+            padding: 10px 10px;
+            height: calc(30% + 15%);
+        }
+
+        .fi-1 {
+            margin: 15px 0px;
+            text-align: center;
+            width: 140px;
+            border-radius: 2px;
+            font-size: 18px;
+            place-content: center;
+            color: white;
+            height: 30px;
+            background: linear-gradient(to left, #00af43, #00af43e2, #00af437d, #ee0c5f69, #ee0c5fef, #ee0c5d);
+        }
+
+        .fi-2 {
+            font-size: 17px;
+            color: #343333;
+        }
+
+        .fi-3 {
+            font-size: 33px;
+            color: #343333;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .fi--p {
+            font-size: 17.5px;
+            color: #343333;
+        }
+
+        .pod-2 {
+            font-size: 19px;
+            color: #2a2929;
+            margin: 10px 0px 20px 0px;
+        }
+
+        .pod-ul {
+            font-size: 15px;
+            list-style: none;
+            font-weight: lighter;
+            color: #2a2929;
+        }
+
+        .pod-ul li {
+            margin: 8px 0px;
+        }
+
+        .fa-check {
+            color: #00af43;
+            margin-right: 15px;
+        }
+
+        .in-div-3 {
+            width: 30%;
+            height: 20%;
+            place-content: center;
+        }
+
+        .li44 li {
+            font-size: 15px;
+            color: #527fd6;
+            font-weight: lighter;
+            padding-top: 4px;
+            list-style: none;
+        }
+
+        .fa-gear {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .fa-file-zipper {
+            margin-right: 14px;
+            font-size: 20px;
+        }
+
+        .in-3-dove {
+            width: calc(100% - 10px);
+            height: calc(100% / 2 - 20px);
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f2f2f2;
+            border-radius: 1px;
+            border: 1px solid #dbdbdb;
+        }
+
+        .dove-p1 {
+            width: 70%;
+            padding: 35px 0px 20px 0px;
+            font-size: 15px;
+            text-align: center;
+            font-weight: normal;
+            color: #696969;
+        }
+
+        .dove-inp {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            height: calc(100% - 75%);
+            justify-content: space-between;
+        }
+
+        #sele {
+            height: 45%;
+            width: 100%;
+        }
+
+        .dove-amount {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            text-align: center;
+            padding: 20px 0px 20px 0px;
+        }
+
+        .amo-pp {
+            font-size: 18px;
+            text-decoration: line-through;
+            color: red;
+        }
+
+        .amo-h2 {
+            font-size: 25px;
+            color: rgb(3, 158, 3);
+        }
+
+        .dove-but {
+            display: flex;
+            flex-direction: column;
+            width: 72%;
+        }
+
+        .but-bo {
+            width: 100%;
+            height: 45px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            background-color: #00af43;
+            border: none;
+            outline: none;
+            transition: all .4s ease;
+        }
+
+        .but-bo:hover {
+            width: 98%;
+            height: 40px;
+            margin: auto;
+            color: #00af43;
+            font-size: 16px;
+            background-color: transparent;
+            backdrop-filter: blur(30px);
+            outline: 4px solid #00af43;
+            border: 2px solid #ee0c5d;
+        }
+
+        .downl {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .fa-circle-down {
+            margin-right: 7px;
+            font-size: 20px;
+        }
+
+        .downl-s {
+            width: 20px;
+            height: 20px;
+            color: #727171;
+            text-decoration: none;
+            transition: all .5s ease;
+        }
+
+        .downl-s:hover {
+            text-decoration: underline;
+        }
+
+        .amop1 {
+            width: 30%;
+            height: 25px;
+            margin-left: calc(70% / 2);
+            background: linear-gradient(to left, #00af43, #03de57a9, #00af4353, #ee0c5f5c, #ee0c5fd2, #ee0c5d);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .sof-con {
+            width: 100%;
+            background-color: #fafafa;
+        }
+
+
+        #gain-img {
+            background: url(IMAGES/ar_300.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #lin {
+            background: url(IMAGES/PCmag-anti-ransomware-certification-black-200.png);
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-top: 30px;
+        }
+
+        #find {
+            font-size: 17px;
+            color: #5e5d5d;
+            margin-top: 40px;
+        }
+
+        #pods li {
+            margin-bottom: 10px;
+        }
+
+        .fry-con {
+            width: 60%;
+            height: 70vh;
+            margin: auto;
+        }
+
+        .fry-pp {
+            font-size: 22px;
+            color: #4b4b4b;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .fry-con2 {
+            height: 80%;
+            margin: 4% 0% 4% 0%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .con2-1 {
+            width: 46%;
+            border: 1px solid gainsboro;
+            background-color: white;
+        }
+
+        .quo1 {
+            height: 20%;
+            place-content: center;
+        }
+
+        .quo2 p {
+            width: 85%;
+            font-size: 18px;
+            font-weight: lighter;
+            margin: auto;
+            margin-left: 50px;
+        }
+
+        .quo3 {
+            height: 15%;
+            place-content: center;
+        }
+
+        .quo3 p {
+            width: 70%;
+            margin: 0px 0px 0px 60px;
+            padding-top: 10px;
+            font-size: 18px;
+            font-weight: lighter;
+        }
+
+        .quo3 p span {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .quo4 {
+            width: 40%;
+            height: 18%;
+            margin-left: 50px;
+            background: url(IMAGES/AWC_logo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .fa-quote-left {
+            margin-left: 50px;
+            font-size: 60px;
+            color: #b2b2b2;
+            padding-top: 25px;
+        }
+
+        #quoo1 {
+            width: 25%;
+            height: 12%;
+            margin-left: 60px;
+            background: url(IMAGES/leprechaun_technical_services.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .shar {
+            width: 100%;
+            height: 55vh;
+            display: flex;
+        }
+
+        .shar-img {
+            width: 45%;
+            height: 100%;
+            background: url(IMAGES/business_about_zonealarm.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .shar-tex {
+            background-color: #404040;
+            width: 55%;
+            height: 100%;
+        }
+
+        .inner-txt-con {
+            width: 50%;
+            height: 100%;
+            margin-left: 140px;
+        }
+
+        .inner-txt-con h1 {
+            font-size: 45px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+            margin-top: 100px;
+        }
+
+        .inner-txt-con p {
+            color: white;
+        }
+
+        .imo-ico {
+            width: 100%;
+            height: 30vh;
+        }
+
+        .ico1-con {
+            width: 100%;
+            height: 45%;
+            background-color: white;
+        }
+
+        .ico-1 {
+            width: 60%;
+            margin: auto;
+            height: 100%;
+            display: flex;
+        }
+
+        .ico-1-1 {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ico-1-1 h5 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #696969;
+            margin-left: 15px;
+        }
+
+        .ico-2 {
+            width: 100%;
+            height: 55%;
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            width: 100%;
+            height: auto;
+            background-color: #f2f2f2;
+            position: relative;
+        }
+
+        .f1-div,
+        .f2-div,
+        .f3-div {
+            width: 100%;
+            /* border: 1px solid red; */
+        }
+
+        .f1-div {
+            height: 4.35vh;
+            transition: all .8s ease-out;
+            border-top: 1px solid #cccccc;
+        }
+
+        .f1-div:hover {
+            height: 30.19vh;
+        }
+
+        .f2-div {
+            height: 47.83vh;
+            border-bottom: 2px solid #cccccc88;
+            border-top: 2px solid #cccccc88;
+        }
+
+        .f3-div {
+            height: 6.96vh;
+            width: 60%;
+            margin: auto;
+            place-content: center;
+        }
+
+        .f2-1 {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            height: 85%;
+            justify-content: space-between;
+        }
+
+        .f2-2 {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            height: 15%;
+        }
+
+        .f2-1-1 {
+            width: 20%;
+            height: 40%;
+        }
+
+        .f2-1-2 {
+            padding-top: 10px;
+            width: 23%;
+            height: 100%;
+        }
+
+        .f2-in1 {
+            width: 100%;
+            height: 50%;
+            background-image: url(IMAGES/zonealarm-logo.svg);
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+
+        }
+
+        .f2-in2 {
+            width: 100%;
+            height: 50%;
+            font-size: 14px;
+            padding-left: 10px;
+            color: #333333;
+            place-content: center;
+        }
+
+        .f2-1-aa {
+            font-size: 14px;
+            font-weight: bold;
+            color: #343333;
+            text-decoration: none;
+        }
+
+        .f2-1-ul {
+            font-size: 15px;
+            font-weight: normal;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 75%;
+            list-style: none;
+        }
+
+        .f2-1-ul a {
+            text-decoration: none;
+            color: #343333;
+            transition: all .1s ease-in-out;
+        }
+
+        .f2-1-ul a:hover {
+            color: #ee0c5d;
+        }
+
+        .f2-1-3 {
+            padding-top: 10px;
+            width: 15%;
+            height: 85%;
+        }
+
+        .f2-1-4 {
+            padding-top: 10px;
+            width: 15%;
+            height: 55%;
+        }
+
+        .f2-2-1 {
+            width: 20%;
+            height: 100%;
+            place-content: center;
+        }
+
+        .f2-2-1 .fa-brands {
+            font-size: 25px;
+            margin-right: 8px;
+            color: #303030;
+            transition: all .2s ease-in-out;
+        }
+
+        .f2-2-1 .fa-brands:hover {
+            color: #ee0c5d;
+        }
+
+        .f2-2-2 {
+            width: 20%;
+            height: 100%;
+            place-content: center;
+        }
+
+        .selection {
+            width: 34%;
+            height: 20px;
+            border: none;
+            outline: none;
+            background-color: #f2f2f2;
+            font-size: 15px;
+            font-weight: normal;
+            color: #303030;
+            transition: all .2s ease;
+        }
+
+        .selection:hover {
+            color: #ee0c5d;
+        }
+
+        .k1 {
+            color: #434343;
+            font-size: 14px;
+            margin-right: 15px;
+            text-decoration: none;
+
+        }
+
+        .k2 {
+            display: inline;
+            font-size: 13px;
+            color: #434343;
+            float: right;
+        }
+
+        .f1-d {
+            width: 30%;
+            height: 0%;
+            margin: auto;
+            text-align: center;
+            transition: all .3s ease;
+            opacity: 0;
+        }
+
+        .f1-div:hover .f1-d {
+            opacity: 1;
+            height: 94%;
+        }
+
+        .f1-div:hover .f1-d .f1-1-h3 {
+            height: 40px;
+        }
+
+        .f1-1-h3 {
+            font-size: 20px;
+            place-content: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2b2b2b;
+            height: 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-div:hover .f1-d .f1-1h5 {
+            height: 10px;
+        }
+
+        .f1-1h5 {
+            font-size: 15px;
+            font-weight: 500;
+            color: #434343;
+            height: 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-div:hover .f1-d .f1-1-ii {
+            height: 45px;
+        }
+
+        .f1-1-ii {
+            width: 95%;
+            height: 0px;
+            padding: 0px 5px 0px 5px;
+            margin: 15px 0px 15px 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-div:hover .f1-d .f1-1-pp {
+            height: 10px;
+        }
+
+        .f1-1-pp {
+            margin-left: 10px;
+            font-size: 12px;
+            font-weight: normal;
+            color: #434343;
+            float: left;
+            height: 0px;
+            transition: all .5s ease;
+        }
+
+        .f1-1-pp a {
+            font-size: 12px;
+            color: #434343;
+        }
+
+        .f1-div:hover .f1-d .f1-1-bb {
+            height: 50px;
+        }
+
+        .f1-1-bb {
+            display: block;
+            width: 150px;
+            height: 0px;
+            margin: 45px auto;
+            color: white;
+            font-size: 16px;
+            background-color: #00af43;
+            border: 1px solid #545454dd;
+            transition: all .1s ease;
+        }
+
+        .f1-1-bb:hover {
+            background-color: #21d365b0;
+        }
+
+        .button-con .fa-angle-down {
+            font-size: 15px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="menu-nav-con">
+            <div class="menu-nav">
+                <a href="index(home).html" class="logo-div"></a>
+                <div class="nav-div">
+                    <ol class="nav-item">
+                        <li class="f1">
+                            <input type="checkbox" id="ttoogg" hidden>
+                            <label for="ttoogg" class="ttoo1">
+                                <div class="hho-con1">
+                                    <div class="hho1"></div>
+                                </div><a href="index(home).html" class="ff-tog">For Home</a><i class="fa fa-angle-down"></i>
+                            </label>
+                            <div class="hid-me">
+                                <div class="h-d-1">
+                                    <h6 class="d-1-1">PC Protection</h6>
+                                    <a class="a-1-1" href="#">ZoneAlarm Extreme Security NextGen</a>
+                                    <a class="a-1-1" href="#">ZoneAlarm Pro Antivirus + Firewall</a>
+                                    <a class="a-1-1" href="#">ZoneAlarm Anti-Ransomware</a>
+                                    <a class="a-1-1" href="#">Compare PC Products</a>
+                                </div>
+                                <div class="h-d-2">
+                                    <h6 class="d-1-1-1">Mobile Apps</h6>
+                                    <a href="#" class="b-1-1">ZoneAlarm Mobile Security</a>
+                                    <h6 class="d-1-1-1">Free PC Security</h6>
+                                    <a href="" class="b-1-1">ZoneAlarm Free Antivirus</a>
+                                    <a href="" class="b-1-1">ZoneAlarm Free Firewall</a>
+                                </div>
+                                <div class="h-d-3">
+                                    <ul class="w-w">
+                                        <h6 class="d-1-1-1">Useful Links</h6>
+                                        <li class="j-w"><i class="fa fa-address-book"></i>Resources</li>
+                                        <li class="j-w"><i class="fa fa-comment"></i>Blog</li>
+                                        <li class="j-w"><i class="fa fa-user-circle"></i>Login to My Account</li>
+                                        <li class="j-w"><i class="fa fa-newspaper-o"></i>Forum</li>
+                                        <li class="j-w"><i class="fa fa-envelope"></i>Testimonials</li>
+                                        <li class="j-w"><i class="fa fa-building"></i>About Us</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="f2">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="index(business).html" style="color: #00af43;">For Business</a>
+                        </li>
+                        <li class="f3">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="#">Partners</a>
+                        </li>
+                        <li class="f4">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="#">Support</a>
+                        </li>
+                        <li class="f5">
+                            <div class="hho-con">
+                                <div class="hho"></div>
+                            </div><a class="hh01" href="#">Renew</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="lang-div">
+                    <i class="fa fa-user-o"></i>
+                    <input type="checkbox" id="toggle-me" hidden>
+                    <label for="toggle-me" class="button-con">English/EUR<i class="fa fa-angle-down"></i></label>
+                    <div class="hidden-div">
+                        <div class="div1">
+                            <label for="lang" class="language-label">Language</label><br>
+                            <select class="language-input">
+                                <option value="#">English</option>
+                                <option value="French">French</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="Arabic">Arabic</option>
+                                <option value="Seria">Seria</option>
+                            </select>
+                        </div>
+                        <div class="div2">
+                            <label for="Currency" class="language-label">Currency</label><br>
+                            <select class="language-input">
+                                <option value="£">EUR - Euro</option>
+                                <option value="$">USD - Dollar</option>
+                                <option value="$">CAD - Canadian Dollar</option>
+                                <option value="₮">AUD - Austrialian Dollar</option>
+                                <option value="₹">YAN - Yearn</option>
+                                <option value="₦">NAR - Naira</option>
+                            </select>
+                        </div>
+                        <div class="div3">
+                            <button class="save-button">SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="image-up-cn">
+            <h2 class="up-cn-h2">ZoneAlarm for Business</h2>
+            <p class="up-cn-p">Robust technology made simple.</p>
+        </div>
+        <div class="text-2-container">
+            <p class="text-2">ZoneAlarm for Business offers comprehensive, advanced, and flexible solutions for
+                unmanaged businesses such as small businesses, Telco’s, government municipalities, and other businesses
+                with little to no IT resources. With its easy deployment and maintenance, ZoneAlarm for Business offers
+                you Check Point’s vigorous multi-platform protection and support, made simple.</p>
+
+        </div>
+    </header>
+    <main>
+        <div class="gain-f">
+            <div class="gain-in-1">
+                <div class="gain-in-1-img"></div>
+                <div class="gain-in-2-img">
+                    <p class="gain-p-p">Platform</p>
+                    <ul>
+                        <li class="in-2-list">
+                            <a href="#"><i class="fa-brands fa-windows"></i></a>
+                            <a href="#"><i class="fa-brands fa-android"></i></a>
+                            <a href="#">
+                                <p><span>i</span>OS</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gain-in-3-img">
+                    <div class="img-3-1">
+                        <div class="in-mig1"></div>
+                        <div class="in-mig2"></div>
+                    </div>
+                    <div class="img-3-2">
+                        <div class="in-mig3"></div>
+                        <div class="in-mig4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gain-in-2">
+                <div class="in-div-1">
+                    <h3 class="fi-1">New Release!</h3>
+                    <h3 class="fi-2">ZoneAlarm</h3>
+                    <h2 class="fi-3">Extreme Security NextGen</h2>
+                    <p class="fi--p">ZoneAlarm Extreme Security NextGen is the comprehensive, ultimate PC and mobile
+                        security solution for all your business security needs, using Check Point’s cutting-edge
+                        enterprise-grade technology.</p>
+                </div>
+                <div class="in-div-2">
+                    <h2 class="pod-2">Product Features</h2>
+                    <ul class="pod-ul">
+                        <li><i class="fa-solid fa-check"></i>Powerful Antivirus prevents malicious threats & attacks
+                        </li>
+                        <li><i class="fa-solid fa-check"></i>Anti-Ransomware - Award-winning ransomware prevention</li>
+                        <li><i class="fa-solid fa-check"></i>Anti-Phishing - Real-time phishing protection for online
+                            shopping & banking</li>
+                        <li><i class="fa-solid fa-check"></i>Mobile Security App – Safeguards iOS and Android devices
+                        </li>
+                        <li><i class="fa-solid fa-check"></i>Threat Extraction – Removes malicious content from
+                            web-downloaded files</li>
+                        <li><i class="fa-solid fa-check"></i>Threat Emulation - A unique ZoneAlarm feature that protects
+                            you against unknown <span style="margin-left: 30px;">Zero-day attacks by examining
+                                suspicious files in the cloud</span></li>
+                        <li><i class="fa-solid fa-check"></i>Firewall Pro - A legendary firewall that safeguards your
+                            identity & online privacy</li>
+                    </ul>
+                    <div class="in-div-3">
+                        <ul class="li44">
+                            <li><i class="fa-regular fa-file-zipper"></i>View Datasheet</li>
+                            <li><i class="fa-solid fa-gear"></i>System Requirements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="gain-in-3">
+                <div class="in-3-dove">
+                    <div class="dove-p1">
+                        <p>Choose the subscription that meets your needs</p>
+                    </div>
+                    <div class="dove-inp">
+                        <select name="" id="sele" for="">
+                            <option value="">1 Device</option>
+                            <option value="">3 Devices</option>
+                            <option value="">5 Devices</option>
+                            <option value="">10 Devices</option>
+                            <option value="">15 Devices</option>
+                            <option value="">25 Devices</option>
+                            <option value="">50 Devices</option>
+                        </select>
+                        <select name="" id="sele" for="">
+                            <option value="">1 Year</option>
+                            <option value="">3 Years</option>
+                            <option value="">5 Years</option>
+                        </select>
+                    </div>
+                    <div class="dove-amount">
+                        <p class="amo-pp">$69.95</p>
+                        <h2 class="amo-h2">$44.95</h2>
+                    </div>
+                    <div class="dove-but">
+                        <button class="but-bo">BUY NOW</button>
+                    </div>
+                </div>
+                <div class="downl">
+                    <a href="" class="downl-s"><i class="fa-solid fa-circle-down"></i>Download trial</a>
+                </div>
+            </div>
+        </div>
+        <div class="sof-con">
+            <div class="gain-f" id="sof">
+                <div class="gain-in-1">
+                    <div class="gain-in-1-img" id="gain-img"></div>
+                    <div class="gain-in-2-img">
+                        <p class="gain-p-p">Platform</p>
+                        <ul>
+                            <li class="in-2-list">
+                                <a href="#"><i class="fa-brands fa-windows"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gain-in-3-img">
+                        <div class="img-3-1">
+                            <div class="in-mig1" id="lin"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gain-in-2">
+                    <div class="in-div-1">
+                        <h3 class="fi-2">ZoneAlarm</h3>
+                        <h2 class="fi-3">Anti-Ransomware</h2>
+                        <p class="fi--p" id="find">Award-winning ZoneAlarm Anti-Ransomware protects businesses of all
+                            sizes against all types of ransomware attacks. Using Check Point’s behavioral-based
+                            techniques, it detects and blocks zero-day ransomware attacks at the first interaction and
+                            fixes and restores any encryption immediately -- minimizing business disruption.</p>
+                    </div>
+                    <div class="in-div-2">
+                        <h2 class="pod-2">Product Features</h2>
+                        <ul class="pod-ul" id="pods">
+                            <li><i class="fa-solid fa-check"></i>Detects and blocks Ransomware threats</li>
+                            <li><i class="fa-solid fa-check"></i>Operates online and offline and covers all files</li>
+                            <li><i class="fa-solid fa-check"></i>Simple to use, compatible with all antiviruses</li>
+                            <li><i class="fa-solid fa-check"></i>Restores your encrypted files automatically</li>
+                            <li><i class="fa-solid fa-check"></i>Real-time phishing protection for online shopping &
+                                banking</li>
+                            <div class="in-div-3">
+                                <ul class="li44">
+                                    <li><i class="fa-regular fa-file-zipper"></i>View Datasheet</li>
+                                    <li><i class="fa-solid fa-gear"></i>System Requirements</li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <div class="gain-in-3">
+                    <div class="in-3-dove">
+                        <div class="dove-p1">
+                            <p>Choose the subscription that meets your needs</p>
+                        </div>
+                        <div class="dove-inp">
+                            <select name="" id="sele" for="">
+                                <option value="">1 Pc</option>
+                                <option value="">3 PCs</option>
+                                <option value="">5 PCs</option>
+                                <option value="" selected>10 PCs</option>
+                            </select>
+                            <select name="" id="sele" for="">
+                                <option value="">1 Year</option>
+                                <option value="">3 Years</option>
+                                <option value="">5 Years</option>
+                            </select>
+                        </div>
+                        <div class="dove-amount">
+                            <p class="amop1">70% OFF</p>
+                            <p class="amo-pp">$94.95</p>
+                            <h2 class="amo-h2">$28.95</h2>
+                        </div>
+                        <div class="dove-but">
+                            <button class="but-bo">BUY NOW</button>
+                        </div>
+                    </div>
+                    <div class="downl">
+                        <a href="" class="downl-s"><i class="fa-solid fa-circle-down"></i>Download trial</a>
+                    </div>
+                </div>
+            </div>
+            <div class="fry-con">
+                <p class="fry-pp">See how businesses like yours found solutions with ZoneAlarm</p>
+                <div class="fry-con2">
+                    <div class="con2-1">
+                        <div class="quo1">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <div class="quo2">
+                            <p>“It’s a well-rounded, feature-rich product. It does what it does well and it sits in the
+                                background very quietly and monitors what’s going on with your files. In this day and
+                                age, it’s really important it does its job and stays out of the way until it’s needed,
+                                and that’s exactly what it does."</p>
+                        </div>
+                        <div class="quo3">
+                            <p><span>- Mike Collison</span>, Director of IT, Auto Warehousing Co. Tacoma, WA</p>
+                        </div>
+                        <div class="quo4"></div>
+                    </div>
+                    <div class="con2-1">
+                        <div class="quo1">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <div class="quo2">
+                            <p>“I swear by it. My clients will ask me what antivirus program I use, and I had told them
+                                that there’s only one that I will personally stand behind, and that is ZoneAlarm.
+                                Between the design of the Firewall, which is your claim to fame for nearly 30 years, as
+                                well as the Antivirus and now the Anti-Ransomware --there’s nothing out there that even
+                                comes close. As far as I’m concerned, it’s the closest thing out there to bulletproof
+                                that you can get. When the stuff hits the fan, ZoneAlarm will save your bacon when
+                                nothing out there will.”</p>
+                        </div>
+                        <div class="quo3">
+                            <p><span>- A. B. Flanagan, III (Bert)</span>, Founder & CEO, Leprechaun Technical Services,
+                                Canyon Lake, TX</p>
+                        </div>
+                        <div class="quo4" id="quoo1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="shar">
+                <div class="shar-img"></div>
+                <div class="shar-tex">
+                    <div class="inner-txt-con">
+                        <h1>Why Us?</h1>
+                        <p>ZoneAlarm is the consumer and small businesses brand of Check Point Software Technologies
+                            Inc. (NASDAQ: CHKP), a leading provider of cyber security solutions for over 100,000
+                            corporate enterprises and governments worldwide. With nearly 100 million downloads,
+                            ZoneAlarm protects PCs and mobile devices – using the same enterprise-grade technology used
+                            by Check Point to protect organizations of all sizes. ZoneAlarm provides cost-effective
+                            solutions and a simple installation process, with no IT skills required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="imo-ico">
+                <div class="ico1-con">
+                    <div class="ico-1">
+                        <div class="ico-1-1">
+                            <img src="IMAGES/business-24hour-support.svg" alt="">
+                            <h5>24/7 online help</h5>
+                        </div>
+                        <div class="ico-1-1">
+                            <img src="IMAGES/business-30day-money-back-guarantee.svg" alt="">
+                            <h5>30-day money-back guarantee</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="ico-2"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="f1-div">
+            <form class="f1-d">
+                <h3 class="f1-1-h3">Stay updated</h3>
+                <h5 class="f1-1h5">Subscribe to our newsletter to receive the latest security news, tips and promotions.
+                </h5>
+                <input class="f1-1-ii" type="text" placeholder="Enter Email Address" required>
+                <p class="f1-1-pp">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and
+                    <a href="">Terms of Service</a> apply</p>
+                <input class="f1-1-bb" type="button" value="SUBMIT">
+            </form>
+        </div>
+        <div class="f2-div">
+            <div class="f2-1">
+                <div class="f2-1-1">
+                    <div class="f2-in1"></div>
+                    <p class="f2-in2">100 Oracle Parkway, Suite 800 <br>Redwood City, CA 94065 <br>United States</p>
+                </div>
+                <div class="f2-1-2">
+                    <a href="" class="f2-1-aa">Products</a>
+                    <ul class="f2-1-ul">
+                        <li><a href="">ZoneAlarm Extreme Security NextGen</a></li>
+                        <li><a href="">ZoneAlarm Pro Antivirus + Firewall</a></li>
+                        <li><a href="">ZoneAlarm Free Antivirus</a></li>
+                        <li><a href="">ZoneAlarm Free Firewall</a></li>
+                        <li><a href="">ZoneAlarm Anti-Ransomware</a></li>
+                        <li><a href="">ZoneAlarm Mobile Security</a></li>
+                        <li><a href="">Small Business Security</a></li>
+                        <li><a href="">Compare PC Products</a></li>
+                        <li><a href="">Free Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="f2-1-3">
+                    <a href="" class="f2-1-aa">Useful Links</a>
+                    <ul class="f2-1-ul">
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Resources</a></li>
+                        <li><a href="">Login to MyAccount</a></li>
+                        <li><a href="">Support</a></li>
+                        <li><a href="">Forum</a></li>
+                        <li><a href="">Testimonials</a></li>
+                        <li><a href="">Beta for Windows</a></li>
+                        <li><a href="">Beta for Mac</a></li>
+                    </ul>
+                </div>
+                <div class="f2-1-4">
+                    <a href="" class="f2-1-aa">About ZoneAlarm</a>
+                    <ul class="f2-1-ul">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Partner with ZoneAlarm</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Antivirus Test Result</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f2-2">
+                <div class="f2-2-1">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="f2-2-2">
+                    <i class="fa fa-globe"
+                        style="margin-left: 20px; color: #545454; font-size: 16px; transition: all .2s ease;"></i>
+                    <select name="country" class="selection">
+                        <option value="en" selected>English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="it">Italiano</option>
+                        <option value="es">Español</option>
+                        <option value="zh">繁體中文</option>
+                    </select>
+                    <i class="fa-solid fa-coins"
+                        style="margin-left: 20px; color: #545454; font-size: 16px; transition: all .2s ease;"></i>
+                    <select name="coin" class="selection" style="width: 55px;">
+                        <option value="usd">USD</option>
+                        <option value="eur" selected>EUR</option>
+                        <option value="gbp">GBP</option>
+                        <option value="cad">CAD</option>
+                        <option value="aud">AUD</option>
+                        <option value="hkd">HKD</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="f3-div">
+            <a class="k1" href="">Privacy Policy</a>
+            <a class="k1" href=""> Terms of Use</a>
+            <a class="k1" href=""> Returns Policy</a>
+            <p class="k2">© ZoneAlarm is a product of Check Point Software Technologies, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
